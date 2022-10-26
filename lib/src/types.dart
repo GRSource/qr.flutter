@@ -45,6 +45,9 @@ enum QrEyeShape {
   /// Use square eye frame.
   square,
 
+  /// Use rounded rectangle eye frame.
+  roundedRectangle,
+
   /// Use circular eye frame.
   circle,
 }
@@ -61,13 +64,16 @@ enum QrDataModuleShape {
 /// Styling options for finder pattern eye.
 class QrEyeStyle {
   /// Create a new set of styling options for QR Eye.
-  const QrEyeStyle({this.eyeShape, this.color});
+  const QrEyeStyle({this.eyeShape, this.color, this.rate = 1});
 
   /// Eye shape.
   final QrEyeShape? eyeShape;
 
   /// Color to tint the eye.
   final Color? color;
+
+  /// rounded rectangle rate
+  final double rate;
 
   @override
   int get hashCode => eyeShape.hashCode ^ color.hashCode;
